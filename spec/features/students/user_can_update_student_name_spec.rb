@@ -1,14 +1,15 @@
 require 'rails_helper'
 
 describe "User can update student" do
-  xscenario "user can update name" do
+  scenario "user can update name" do
     student = Student.create(name: "Joe")
 
     visit edit_student_path(student)
-    save_and_open_page
     fill_in "student[name]", with: "Steve"
 
-    expect(current_path).to eq(students_path)
+    click_button "Update"
+
+    expect(current_path).to eq(student_path(student))
     expect(page).to have_content("Steve")
     expect(page).to_not have_content("Joe")
   end

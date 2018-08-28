@@ -14,7 +14,7 @@ def create
       redirect_to students_path
     else
       flash.notice = "Student already exists!"
-      redirect_to new_student_path
+      redirect_to new_student_path(student)
     end
   end
 
@@ -23,15 +23,14 @@ def show
 end
 
 def edit
-
+  @student = Student.find(params[:id])
 end
 
 def update
     @student = Student.find(params[:id])
     @student.update(student_params)
     if @student.save
-      flash[:success] = "#{@student.name} updated!"
-      redirect_to students_path
+      redirect_to student_path
     else
       render :edit
     end
