@@ -12,5 +12,8 @@ describe "User can update student" do
     expect(current_path).to eq(student_path(student))
     expect(page).to have_content("Steve")
     expect(page).to_not have_content("Joe")
+    expect(page).to have_content("All Students")
+    expect(page).to have_content("Create New Student")
+
   end
 end

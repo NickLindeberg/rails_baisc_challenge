@@ -8,5 +8,8 @@ describe "User deletes existing student" do
     click_link "Delete"
 
     expect(page).to_not have_content("Joey")
+    expect(page).to have_content("All Students")
+    expect(page).to have_content("Create New Student")
+
   end
 end

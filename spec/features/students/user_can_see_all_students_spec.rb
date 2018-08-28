@@ -9,5 +9,7 @@ describe "User sees a all students" do
 
     expect(page).to have_content(s1.name)
     expect(page).to have_content(s2.name)
+    expect(page).to have_content("Create New Student")
+
   end
 end

@@ -10,5 +10,8 @@ describe "User creates a new student" do
 
     expect(current_path).to eq(students_path)
     expect(page).to have_content("Samuel")
+    expect(page).to have_content("All Students")
+    expect(page).to have_content("Create New Student")
+
   end
 end
