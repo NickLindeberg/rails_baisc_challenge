@@ -1,8 +1,8 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Student, type: :model do
-  describe 'Validations' do
-    it { should validate_presence_of :name }
-    it { should validate_presence_of :id }
+  describe "validations" do
+    it { should validate_presence_of(:name)}
+    it { should validate_presence_of(:id)}
   end
 end
