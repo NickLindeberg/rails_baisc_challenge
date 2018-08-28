@@ -1,1 +1,7 @@
 <%= @student.name %>
+
+
+<body>
+  <%= link_to 'Create New Address', new_student_address_path(@student) %>
+  <%= yield %>
+</body>
